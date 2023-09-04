@@ -3,7 +3,8 @@ header {
   height: 520px;
   display: flex;
   flex-direction: column;
+  justify-content: flex-end;
   align-items: center;
   background-color:darkkhaki;
-  background-image: url(".../assets/arches.png");
+  background-image: url("../images/arches.png");
 }
