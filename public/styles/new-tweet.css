@@ -9,8 +9,10 @@ h2 {
 .new-tweet textarea {
   background-color: transparent;
   margin: 0.8% 0;
-  border-color: transparent transparent black transparent;
-  border-width: 3px;
+  border-top: transparent;
+  border-left: transparent;
+  border-right: transparent;
+  border-bottom: 3px #545149 solid;
   width: 100%;
   height: 2em;
   resize: none;
