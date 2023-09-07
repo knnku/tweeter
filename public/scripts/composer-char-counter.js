@@ -6,7 +6,7 @@ $(document).ready(function () {
   $("#tweet-text").on("input", function () {
     let tweetCount = $(this).val().length;
     let target = $(this).parent().find(".counter");
-  
+
     let remainingCharacters = 140 - tweetCount;
     target.val(remainingCharacters);
 
@@ -14,8 +14,7 @@ $(document).ready(function () {
     if (remainingCharacters <= 0) {
       target.css("color", "red");
     } else {
-      target.css("color", ""); 
+      target.css("color", "");
     }
-
   });
 });
