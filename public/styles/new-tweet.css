@@ -6,6 +6,7 @@ section .new-tweet {
 h2 {
   text-align: left;
 }
+
 .new-tweet textarea {
   background-color: transparent;
   margin: 0.8% 0;
