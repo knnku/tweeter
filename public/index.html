@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
   <link rel="stylesheet" href="/styles/header.css" type="text/css" />
   <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/tweets.css" type="text/css" />
 
   <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -44,7 +45,7 @@
     </div>
   </nav>
 
-  <header>
+  <header id="site-header">
     <div>
       <img src="/images/profile-hex.png" />
     </div>
@@ -68,6 +69,36 @@
           <output name="counter" class="counter" for="tweet-text">140</output>
         </div>
       </form>
+    </section>
+    <section class="tweet">
+      <header>
+
+        <div class="tweet-user">
+          <div>
+            UserPhotoIcon
+          </div>
+          <div>
+            UserName
+          </div>
+        </div>
+
+        <div class="tweet-usertag">
+           @RandomUser
+        </div>
+
+      </header>
+      <article>
+        Hey this is a tweet!
+      </article>
+      <footer>
+        <div class="tweet-timestamp">
+          Timestamp
+        </div>
+        <div class="tweet-icons">
+          Tweet actions.
+        </div>
+      </footer>
+
     </section>
   </main>
 </body>

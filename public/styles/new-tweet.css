@@ -1,6 +1,7 @@
-section .new-tweet {
+section.new-tweet {
   width: auto;
-  margin: 1% 1%;
+  margin: 1% 0%;
+  padding: 2% 0;
 }
 
 h2 {
