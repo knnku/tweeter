@@ -3,36 +3,80 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
-
-
-const tweetData = {
-  user: {
-    name: "Newton",
-    avatars: "https://i.imgur.com/73hZDYK.png",
-    handle: "@SirIsaac",
-  },
-  content: {
-    text: "If I have seen further it is by standing on the shoulders of giants",
-  },
-  created_at: 1461116232227,
-};
-
-
-const createTweetElement = function (tweet) {
-
-  const { name, avatars, handle } = tweet.user;
-  const tweetText = tweet.content.text;
-  const tweetOutput = `<article class="tweet">${tweetText}</article`
-  
-  return tweetOutput;
-}
-
 $(document).ready(function () {
 
-const $tweet = createTweetElement(tweetData);
+  const data = [
+    {
+      user: {
+        name: "Newton",
+        avatars: "https://i.imgur.com/73hZDYK.png",
+        handle: "@SirIsaac",
+      },
+      content: {
+        text: "If I have seen further it is by standing on the shoulders of giants",
+      },
+      created_at: 1461116232227,
+    },
+    {
+      user: {
+        name: "Descartes",
+        avatars: "https://i.imgur.com/nlhLi3I.png",
+        handle: "@rd",
+      },
+      content: {
+        text: "Je pense , donc je suis",
+      },
+      created_at: 1461113959088,
+    },
+  ];
 
-  console.log($tweet); // to see what it looks like
-  $('.tweets-container').append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
+  const createTweetElement = function (tweet) {
+    const { name, avatars, handle } = tweet.user;
+    const tweetText = tweet.content.text;
+    const timestamp = tweet.created_at;
+    const $tweetOutput = `
+      <article class="tweet">
+        <header>
 
+          <div class="tweet-user">
+            <div class="tweet-useravatar">
+              <img src="${avatars}">
+            </div>
+            <div class="username">
+              ${name}
+            </div>
+          </div>
 
+          <div class="tweet-usertag">
+            ${handle}
+          </div>
+        </header>
+
+        <p>
+          ${tweetText}
+        </p>
+
+        <footer>
+          <div class="tweet-timestamp">
+            ${timestamp}
+          </div>
+          <div class="tweet-icons">
+            <i class="fa-solid fa-flag"></i>
+            <i class="fa-solid fa-repeat"></i>
+            <i class="fa-solid fa-heart"></i>
+          </div>
+        </footer>
+      </article>`;
+
+    return $tweetOutput;
+  };
+
+  const renderTweets = function (tweets) {
+    for (let tweet of tweets) {
+      const $tweet = createTweetElement(tweet);
+      $(".tweets-container").append($tweet);
+    }
+  };
+
+  renderTweets(data);
 });

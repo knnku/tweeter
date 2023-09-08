@@ -21,6 +21,11 @@ article.tweet header {
 
 .tweet-user {
   display: flex;
+  align-items: center;
+}
+
+.tweet-user div {
+  padding: 0 5px;
 }
 
 .tweet-usertag {
@@ -30,8 +35,8 @@ article.tweet header {
 }
 
 article.tweet p {
-  margin: 28px 0;
-  padding: 20px 0;
+  margin: 22px 0;
+  padding: 18px 0;
   border-bottom: 3px solid #545149;
   font-size: 1.1em;
 }
@@ -48,9 +53,11 @@ article.tweet footer {
   color: #989691;
 }
 
+/* tweet action icons */
 .tweet-icons {
   font-size: 0.8em;
 }
+
 .tweet-icons i {
   padding: 0 5px;
 }
