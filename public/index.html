@@ -57,6 +57,7 @@
 
   <!-- Page-specific (main) content here -->
   <main class="container">
+    <!-- tweet form -->
     <section class="new-tweet">
       <h2>Compose Tweet</h2>
 
@@ -70,38 +71,42 @@
         </div>
       </form>
     </section>
-    <section class="tweet">
-      <header>
-
-        <div class="tweet-user">
-          <div class="tweet-usericon">
-            UserPhotoIcon
+    <!-- tweets display -->
+    <section class="tweets-container">
+      <article class="tweet">
+        <header>
+          <!-- user avatar & name -->
+          <div class="tweet-user">
+            <div class="tweet-useravatar">
+              UserPhotoIcon
+            </div>
+            <div class="username">
+              John Doe
+            </div>
           </div>
-          <div class="username">
-            John Doe
+          <!-- usertag -->
+          <div class="tweet-usertag">
+            @RandomUser
           </div>
-        </div>
+        </header>
 
-        <div class="tweet-usertag">
-           @RandomUser
-        </div>
+        <p>
+          Hey this is a tweet!
+        </p>
 
-      </header>
-      <article>
-        Hey this is a tweet!
+        <footer>
+          <div class="tweet-timestamp">
+            Sometime ago.
+          </div>
+          <div class="tweet-icons">
+            <i class="fa-solid fa-flag"></i>
+            <i class="fa-solid fa-repeat"></i>
+            <i class="fa-solid fa-heart"></i>
+          </div>
+        </footer>
       </article>
-      <footer>
-        <div class="tweet-timestamp">
-          Sometime ago.
-        </div>
-        <div class="tweet-icons">
-          <i class="fa-solid fa-flag"></i>
-          <i class="fa-solid fa-repeat"></i>
-          <i class="fa-solid fa-heart"></i>
-        </div>
-      </footer>
-
     </section>
   </main>
+
 </body>
 </html>

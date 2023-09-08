@@ -1,15 +1,19 @@
-section.tweet {
+section.tweets-container {
+  margin: 5% 0;;
+}
+
+article.tweet {
   border: 3px solid #545149;
   padding: 1%;
-  margin: 3% 0;
+  margin: 2% 0;
   text-align: left;
 }
 
-section.tweet:hover {
+article.tweet:hover {
   box-shadow: 6px 6px #989691;
 }
 
-section.tweet header {
+article.tweet header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -25,14 +29,14 @@ section.tweet header {
   color: #989691;
 }
 
-section.tweet article {
+article.tweet p {
   margin: 28px 0;
   padding: 20px 0;
   border-bottom: 3px solid #545149;
   font-size: 1.1em;
 }
 
-section.tweet footer {
+article.tweet footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
