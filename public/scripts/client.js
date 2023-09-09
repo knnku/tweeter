@@ -71,12 +71,19 @@ $(document).ready(function () {
     return $tweetOutput;
   };
 
-  const renderTweets = function (tweets) {
+  const $renderTweets = function (tweets) {
     for (let tweet of tweets) {
       const $tweet = createTweetElement(tweet);
       $(".tweets-container").append($tweet);
     }
   };
 
-  renderTweets(data);
+  $renderTweets(data);
+
+  const $tweetFormSubmit= $("#tweet-submit");
+  $($tweetFormSubmit).on('submit', function (e) {
+    e.preventDefault();
+    console.log("Tweet form submitted!");
+    console.log(e);
+  })
 });
