@@ -66,12 +66,13 @@
     <section class="new-tweet">
       <h2>Compose Tweet</h2>
 
-      <form action="/tweets/" method="POST" id="tweet-submit">
+      <form action="/tweets/" method="POST" id="tweet-submit" type="submit">
         <!-- placeholder for tweet headline -->
         <!-- <label for="tweet-text">What are you humming about?</label> -->
         <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
-
+        
         <div>
+          
           <button type="submit">Tweet</button>
           <output name="counter" class="counter" for="tweet-text">140</output>
         </div>
@@ -79,38 +80,7 @@
     </section>
 
     <section class="tweets-container">
-      <!-- <article class="tweet">
-        <header>
- 
-          <div class="tweet-user">
-            <div class="tweet-useravatar">
-              UserPhotoIcon
-            </div>
-            <div class="username">
-              John Doe
-            </div>
-          </div>
-
-          <div class="tweet-usertag">
-            @RandomUser
-          </div>
-        </header>
-
-        <p>
-          Hey this is a tweet!
-        </p>
-
-        <footer>
-          <div class="tweet-timestamp">
-            Sometime ago.
-          </div>
-          <div class="tweet-icons">
-            <i class="fa-solid fa-flag"></i>
-            <i class="fa-solid fa-repeat"></i>
-            <i class="fa-solid fa-heart"></i>
-          </div>
-        </footer>
-      </article> -->
+      <!-- Tweets will propagate here -->
     </section>
     
   </main>

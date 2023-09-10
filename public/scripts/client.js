@@ -5,31 +5,7 @@
  */
 
 $(document).ready(function () {
-  const data = [
-    {
-      user: {
-        name: "Newton",
-        avatars: "https://i.imgur.com/73hZDYK.png",
-        handle: "@SirIsaac",
-      },
-      content: {
-        text: "If I have seen further it is by standing on the shoulders of giants",
-      },
-      created_at: 1461116232227,
-    },
-    {
-      user: {
-        name: "Descartes",
-        avatars: "https://i.imgur.com/nlhLi3I.png",
-        handle: "@rd",
-      },
-      content: {
-        text: "Je pense , donc je suis",
-      },
-      created_at: 1461113959088,
-    },
-  ];
-
+  //Build Tweet Structure
   const createTweetElement = function (tweet) {
     const { name, avatars, handle } = tweet.user;
     const tweetText = tweet.content.text;
@@ -71,27 +47,25 @@ $(document).ready(function () {
     return $tweetOutput;
   };
 
+  //Loop through tweets JSON in tweets data route
   const $renderTweets = function (tweets) {
-    for (let tweet of tweets) {
-      const $tweet = createTweetElement(tweet);
+    for (let i = tweets.length - 1; i >= 0; i--) {
+      const $tweet = createTweetElement(tweets[i]);
       $(".tweets-container").append($tweet);
     }
   };
 
-  // Hardcode Render Tweets
-  // $renderTweets(data);
-
-  // Capture tweet data on form(button) submmit
-  const $tweetFormSubmit = $("#tweet-submit");
-  $($tweetFormSubmit).on("submit", function (event) {
-    event.preventDefault();
-    // console.log("Tweet form submitted!");
-    // console.log($(this));
-
+  //Capture & POST tweet data on form(button) submmit
+  const $tweetForm  = $("#tweet-submit");
+  $($tweetForm).on("submit", function (event) {
     const $data = $(this).serialize();
     $.post("/tweets", $data);
+
+    $("#tweet-text").val("");
+    event.preventDefault();
   });
 
+  //Load tweets from tweets data route via GET
   const $loadTweets = function () {
     $.get("/tweets", function (data, status) {
       $renderTweets(data);
