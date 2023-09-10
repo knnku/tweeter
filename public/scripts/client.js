@@ -4,7 +4,6 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 $(document).ready(function () {
-
   const data = [
     {
       user: {
@@ -78,12 +77,20 @@ $(document).ready(function () {
     }
   };
 
-  $renderTweets(data);
+  // Hardcode Render Tweets
+  // $renderTweets(data);
 
-  const $tweetFormSubmit= $("#tweet-submit");
-  $($tweetFormSubmit).on('submit', function (e) {
-    e.preventDefault();
-    console.log("Tweet form submitted!");
-    console.log(e);
-  })
+  // Capture tweet data on form(button) submmit
+  const $tweetFormSubmit = $("#tweet-submit");
+  $($tweetFormSubmit).on("submit", function (event) {
+    event.preventDefault();
+    // console.log("Tweet form submitted!");
+    // console.log($(this));
+
+    const data = $(this).serialize();
+    $.post("/tweets", data);
+  });
+
+  const $loadTweets = function (data) {
+  };
 });
