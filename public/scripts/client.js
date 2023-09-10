@@ -3,6 +3,7 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
+
 $(document).ready(function () {
   const data = [
     {
@@ -57,7 +58,7 @@ $(document).ready(function () {
 
         <footer>
           <div class="tweet-timestamp">
-            ${timestamp}
+            ${$.timeago(timestamp)}
           </div>
           <div class="tweet-icons">
             <i class="fa-solid fa-flag"></i>
@@ -87,10 +88,15 @@ $(document).ready(function () {
     // console.log("Tweet form submitted!");
     // console.log($(this));
 
-    const data = $(this).serialize();
-    $.post("/tweets", data);
+    const $data = $(this).serialize();
+    $.post("/tweets", $data);
   });
 
-  const $loadTweets = function (data) {
+  const $loadTweets = function () {
+    $.get("/tweets", function (data, status) {
+      $renderTweets(data);
+    });
   };
+
+  $loadTweets();
 });
