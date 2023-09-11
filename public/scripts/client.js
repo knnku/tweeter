@@ -64,16 +64,22 @@ $(document).ready(function () {
     }
 
     const $data = $(this).serialize();
-    $.post("/tweets", $data);
-    $("#tweet-text").val("");
-  });
+    $.post("/tweets", $data, function () {
+      // Clear the tweet input field
+      $("#tweet-text").val("");
 
+      // Clear the existing tweets container and reload tweets
+      $(".tweets-container").empty();
+      $loadTweets();
+    });
+  });
 
   //Loop through tweets JSON in tweets data route
   const $renderTweets = function (tweets) {
     for (let i = tweets.length - 1; i >= 0; i--) {
       const $tweet = createTweetElement(tweets[i]);
       $(".tweets-container").append($tweet);
+      console.log("here");
     }
   };
 
