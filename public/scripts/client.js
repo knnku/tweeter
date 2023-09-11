@@ -50,25 +50,24 @@ $(document).ready(function () {
   //Capture & POST tweet data on form(button) submmit
   const $tweetForm = $("#tweet-submit");
   $($tweetForm).on("submit", function (event) {
+    event.preventDefault();
     const $checkTweet = $("#tweet-text").val();
 
+    //Checks---->
     //Check form if empty
     if ($checkTweet === ""){
-      event.preventDefault()
       return alert("Empty tweets ain't gonna cut it!")
     }
     //Check if tweet is long
-    if ($checkTweet.length > 140) {
-      event.preventDefault();
+    if ($checkTweet.length > 140) {;
       return alert("You have lot to say you cheeky bastard!");
     }
 
     const $data = $(this).serialize();
     $.post("/tweets", $data);
-
     $("#tweet-text").val("");
-    event.preventDefault();
   });
+
 
   //Loop through tweets JSON in tweets data route
   const $renderTweets = function (tweets) {
