@@ -47,6 +47,29 @@ $(document).ready(function () {
     return $tweetOutput;
   };
 
+  //Capture & POST tweet data on form(button) submmit
+  const $tweetForm = $("#tweet-submit");
+  $($tweetForm).on("submit", function (event) {
+    const $checkTweet = $("#tweet-text").val();
+
+    //Check form if empty
+    if ($checkTweet === ""){
+      event.preventDefault()
+      return alert("Empty tweets ain't gonna cut it!")
+    }
+    //Check if tweet is long
+    if ($checkTweet.length > 140) {
+      event.preventDefault();
+      return alert("You have lot to say you cheeky bastard!");
+    }
+
+    const $data = $(this).serialize();
+    $.post("/tweets", $data);
+
+    $("#tweet-text").val("");
+    event.preventDefault();
+  });
+
   //Loop through tweets JSON in tweets data route
   const $renderTweets = function (tweets) {
     for (let i = tweets.length - 1; i >= 0; i--) {
@@ -54,16 +77,6 @@ $(document).ready(function () {
       $(".tweets-container").append($tweet);
     }
   };
-
-  //Capture & POST tweet data on form(button) submmit
-  const $tweetForm  = $("#tweet-submit");
-  $($tweetForm).on("submit", function (event) {
-    const $data = $(this).serialize();
-    $.post("/tweets", $data);
-
-    $("#tweet-text").val("");
-    event.preventDefault();
-  });
 
   //Load tweets from tweets data route via GET
   const $loadTweets = function () {
