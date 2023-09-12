@@ -5,6 +5,13 @@
  */
 
 $(document).ready(function () {
+  //XSS Escape for template literal tweet structure
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
   //Build Tweet Structure
   const createTweetElement = function (tweet) {
     const { name, avatars, handle } = tweet.user;
@@ -29,7 +36,7 @@ $(document).ready(function () {
         </header>
 
         <p>
-          ${tweetText}
+          ${escape(tweetText)}
         </p>
 
         <footer>
@@ -55,15 +62,16 @@ $(document).ready(function () {
 
     //Checks---->
     //Check form if empty
-    if ($checkTweet === ""){
-      return alert("Empty tweets ain't gonna cut it!")
+    if ($checkTweet === "") {
+      return alert("Empty tweets ain't gonna cut it!");
     }
     //Check if tweet is long
-    if ($checkTweet.length > 140) {;
+    if ($checkTweet.length > 140) {
       return alert("You have lot to say you cheeky bastard!");
     }
 
     const $data = $(this).serialize();
+    
     $.post("/tweets", $data, function () {
       // Clear the tweet input field
       $("#tweet-text").val("");
@@ -79,7 +87,6 @@ $(document).ready(function () {
     for (let i = tweets.length - 1; i >= 0; i--) {
       const $tweet = createTweetElement(tweets[i]);
       $(".tweets-container").append($tweet);
-      console.log("here");
     }
   };
 
@@ -89,6 +96,6 @@ $(document).ready(function () {
       $renderTweets(data);
     });
   };
-
+  //Initial tweet load
   $loadTweets();
 });
