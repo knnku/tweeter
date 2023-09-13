@@ -63,7 +63,7 @@ $(document).ready(function () {
   //Capture & POST tweet data on form(button) submmit
   const $tweetForm = $("#tweet-submit");
   $($tweetForm).on("submit", function (event) {
-    // Banish error
+    //Banish error
     $(".tweet-error").slideUp("fast");
 
     event.preventDefault();
@@ -92,16 +92,16 @@ $(document).ready(function () {
       $("#tweet-text").val("");
 
       // Clear the existing tweets container and reload tweets
-      $(".tweets-container").empty();
-      $loadTweets();
+      // $(".tweets-container").empty();
+      $loadLastTweet();
     });
   });
 
   //Loop through tweets JSON in tweets data route
   const $renderTweets = function (tweets) {
-    for (let i = tweets.length - 1; i >= 0; i--) {
+    for (let i = 0; i < tweets.length; i++) {
       const $tweet = createTweetElement(tweets[i]);
-      $(".tweets-container").append($tweet);
+      $(".tweets-container").prepend($tweet);
     }
   };
 
@@ -111,6 +111,18 @@ $(document).ready(function () {
       $renderTweets(data);
     });
   };
+
+  //Load last tweet upon user submission
+  const $loadLastTweet = function () {
+    $.get("/tweets", function (data, status) {
+      let $tweet;
+      for (let i = 0; i < data.length; i++) {
+        $tweet = createTweetElement(data[data.length - 1]);
+      }
+      $(".tweets-container").prepend($tweet);
+    });
+  };
+
   //Initial tweet load
   $loadTweets();
 });
