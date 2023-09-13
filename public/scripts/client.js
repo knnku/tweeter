@@ -69,7 +69,6 @@ $(document).ready(function () {
     event.preventDefault();
     const $checkTweet = $("#tweet-text").val();
 
-    //Checks---->
     //Check form if empty
     if ($checkTweet === "") {
       $(".tweet-error").slideDown("fast", function () {
