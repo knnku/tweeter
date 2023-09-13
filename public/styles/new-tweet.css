@@ -1,7 +1,7 @@
 section.new-tweet {
   width: auto;
-  margin: 1% 0%;
   padding: 2% 0;
+  margin-top: 3%;;
 }
 
 h2 {
@@ -24,10 +24,9 @@ h2 {
   outline: none;
 }
 
-.new-tweet div {
+.new-tweet .tweet-actions {
   display: flex;
   justify-content: space-between;
-  font-family: 'Bungee', sans-serif;
 }
 
 .new-tweet button {
@@ -36,6 +35,7 @@ h2 {
   border: none;
   padding: 8px 16px;
   border-radius: 0.2em;
+  font-family: 'Bungee', sans-serif;
 }
 
 .new-tweet button:hover {

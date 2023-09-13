@@ -62,16 +62,18 @@
 
   <!-- Page-specific (main) content here -->
   <main class="container">
+
     <!-- tweet form -->
     <section class="new-tweet">
+      <!-- Tweet error -->
+      <div class="tweet-error"><label><i class="fa-solid fa-triangle-exclamation"></i>This tweet is too long!<i class="fa-solid fa-triangle-exclamation"></i></label></div>
 
-
+      <!-- Tweet main -->
       <form action="/tweets/" method="POST" id="tweet-submit" type="submit">
         <label for="tweet-text">What are you humming about?</label>
         <textarea name="text" id="tweet-text"></textarea>
         
-        <div>
-          
+        <div class="tweet-actions">         
           <button type="submit">Tweet</button>
           <output name="counter" class="counter" for="tweet-text">140</output>
         </div>

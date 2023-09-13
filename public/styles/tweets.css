@@ -1,11 +1,11 @@
 section.tweets-container {
-  margin: 5% 0;;
+  margin: 3% 0;;
 }
 
 article.tweet {
   border: 3px solid #545149;
   padding: 1%;
-  margin: 2% 0;
+  margin: 3.3% 0;
   text-align: left;
 }
 
@@ -17,21 +17,6 @@ article.tweet header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-.tweet-user {
-  display: flex;
-  align-items: center;
-}
-
-.tweet-user div {
-  padding: 0 5px;
-}
-
-.tweet-usertag {
-  font-weight: bold;
-  font-size: 0.7em;
-  color: #989691;
 }
 
 article.tweet p {
@@ -48,11 +33,28 @@ article.tweet footer {
   align-items: center;
 }
 
+/* Tweet elements */
+.tweet-user {
+  display: flex;
+  align-items: center;
+}
+
+.tweet-user div {
+  padding: 0 5px;
+}
+
+.tweet-usertag {
+  font-weight: bold;
+  font-size: 0.7em;
+  color: #989691;
+}
+
 .tweet-timestamp {
   font-weight: bold;
   font-size: 0.6em;
   color: #989691;
 }
+
 
 /* tweet action icons */
 .tweet-icons {
@@ -65,4 +67,19 @@ article.tweet footer {
 
 .tweet-icons i:hover {
   color: #4056A1;
+}
+
+/* Tweet Error */
+.tweet-error {
+  display: flex;
+  border: 2px solid red;
+  padding: 2% 0;
+  margin: 2% 0;
+  color: red;
+  justify-content: center;
+  display: none;
+}
+
+.tweet-error i{
+  margin: 0 18px;
 }
