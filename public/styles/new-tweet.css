@@ -41,3 +41,7 @@ h2 {
 .new-tweet button:hover {
   background-color: #4056B8;
 }
+
+.new-tweet label{
+  font-weight: bold;
+}
