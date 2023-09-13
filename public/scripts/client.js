@@ -54,24 +54,39 @@ $(document).ready(function () {
     return $tweetOutput;
   };
 
+  //Error template for empty threats
+  const $tweetErr1 = `<i class="fa-solid fa-triangle-exclamation"></i>Empty tweets are not allowed.<i class="fa-solid fa-triangle-exclamation"></i></label>`;
+
+  //Error templates for too much threats
+  const $tweetErr2 = `<i class="fa-solid fa-triangle-exclamation"></i>This tweet is too long!<i class="fa-solid fa-triangle-exclamation"></i></label>`;
+
   //Capture & POST tweet data on form(button) submmit
   const $tweetForm = $("#tweet-submit");
   $($tweetForm).on("submit", function (event) {
+    // Banish error
+    $(".tweet-error").slideUp("fast");
+
     event.preventDefault();
     const $checkTweet = $("#tweet-text").val();
 
     //Checks---->
     //Check form if empty
     if ($checkTweet === "") {
-      return alert("Empty tweets ain't gonna cut it!");
+      $(".tweet-error").slideDown("fast", function () {
+        $(this).css("display", "block").html($tweetErr1);
+      });
+      return;
     }
     //Check if tweet is long
     if ($checkTweet.length > 140) {
-      return alert("You have lot to say you cheeky bastard!");
+      $(".tweet-error").slideDown("fast", function () {
+        $(this).css("display", "block").html($tweetErr2);
+      });
+      return;
     }
 
     const $data = $(this).serialize();
-    
+
     $.post("/tweets", $data, function () {
       // Clear the tweet input field
       $("#tweet-text").val("");

@@ -71,12 +71,11 @@ article.tweet footer {
 
 /* Tweet Error */
 .tweet-error {
-  display: flex;
   border: 2px solid red;
   padding: 2% 0;
-  margin: 2% 0;
+  margin-bottom: 3%;
   color: red;
-  justify-content: center;
+  text-align: center;
   display: none;
 }
 
