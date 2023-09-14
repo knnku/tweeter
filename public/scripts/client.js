@@ -55,31 +55,34 @@ $(document).ready(function () {
   };
 
   //Error template for empty threats
-  const $tweetErr1 = `<i class="fa-solid fa-triangle-exclamation"></i>Empty tweets are not allowed.<i class="fa-solid fa-triangle-exclamation"></i></label>`;
+  const $emptyTweetErr = `<label><i class="fa-solid fa-triangle-exclamation"></i>Empty tweets are not allowed!<i
+        class="fa-solid fa-triangle-exclamation"></i></label>`;
 
   //Error templates for too much threats
-  const $tweetErr2 = `<i class="fa-solid fa-triangle-exclamation"></i>This tweet is too long!<i class="fa-solid fa-triangle-exclamation"></i></label>`;
+  const $longTweetErr = `<label><i class="fa-solid fa-triangle-exclamation"></i>This tweet is too long!<i class="fa-solid fa-triangle-exclamation"></i></label>`;
 
   //Capture & POST tweet data on form(button) submmit
   const $tweetForm = $("#tweet-submit");
   $($tweetForm).on("submit", function (event) {
-    //Banish error
+    event.preventDefault();
+
+    //Banish error if exists
     $(".tweet-error").slideUp("fast");
 
-    event.preventDefault();
-    const $checkTweet = $("#tweet-text").val();
-
     //Check form if empty
+    const $checkTweet = $("#tweet-text").val();
     if ($checkTweet === "") {
-      $(".tweet-error").slideDown("fast", function () {
-        $(this).css("display", "block").html($tweetErr1);
+      $(".tweet-error").html($emptyTweetErr);
+      $(".tweet-error").slideDown("easing", function () {
+        $(this).css("display", "block");
       });
       return;
     }
     //Check if tweet is long
     if ($checkTweet.length > 140) {
-      $(".tweet-error").slideDown("fast", function () {
-        $(this).css("display", "block").html($tweetErr2);
+      $(".tweet-error").html($longTweetErr);
+      $(".tweet-error").slideDown("easing", function () {
+        $(this).css("display", "block");
       });
       return;
     }
@@ -114,10 +117,7 @@ $(document).ready(function () {
   //Load last tweet upon user submission
   const $loadLastTweet = function () {
     $.get("/tweets", function (data, status) {
-      let $tweet;
-      for (let i = 0; i < data.length; i++) {
-        $tweet = createTweetElement(data[data.length - 1]);
-      }
+      let $tweet = createTweetElement(data[data.length - 1]);
       $(".tweets-container").prepend($tweet);
     });
   };

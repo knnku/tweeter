@@ -30,3 +30,10 @@ body {
   margin: auto;
   background-color: #f4f1ec;
  }
+ 
+ @media only screen and (min-width: 1024px) {
+  body {
+    display: flex;
+    flex-direction: row;
+  }
+ }
