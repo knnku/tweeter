@@ -4,7 +4,7 @@ section.tweets-container {
 
 article.tweet {
   border: 3px solid #545149;
-  padding: 1%;
+  padding: 2%;
   margin: 3.3% 0;
   text-align: left;
 }

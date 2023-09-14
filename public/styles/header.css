@@ -1,5 +1,6 @@
-header.site-header {
-  height: 530px;
+ .site-header {
+  margin-top: 120px;
+  height: 400px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -15,8 +16,9 @@ header h2 {
 }
 
 @media only screen and (min-width: 1024px) {
-  header.site-header {
+  .site-header {
     height: 100vh;
     justify-content: center;
+    padding-top: 8%;
   }
 }
