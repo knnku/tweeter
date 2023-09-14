@@ -5,6 +5,11 @@
  */
 
 $(document).ready(function () {
+  //Bounce return buttong
+  $(window).on("scroll", () => {
+    $(".scroll-up button").css("visibility", "visible");
+  });
+
   //XSS Escape for template literal tweet structure
   const escape = function (str) {
     let div = document.createElement("div");

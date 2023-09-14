@@ -25,3 +25,42 @@ nav .new-tweet {
   align-items: center;
 }
 
+
+/* Styles for back to top (since it's considered nav?) */
+
+.scroll-up button {
+  right: 2%;
+  bottom: 4%;
+  width: 58px;
+  height: 58px;
+  position: fixed;
+  border-radius: 50%;
+  color: #FFFFFF;
+  background-color:#4056A1;
+  border: none;
+  text-align: center;
+
+  visibility: hidden;
+}
+
+.scroll-up button:hover {
+  animation: bounce2 2s ease infinite;
+}
+
+@keyframes bounce2 {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+
+  40% {
+    transform: translateY(-30px);
+  }
+
+  60% {
+    transform: translateY(-15px);
+  }
+}

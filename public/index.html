@@ -71,7 +71,7 @@
       <!-- Tweet main -->
       <form action="/tweets/" method="POST" id="tweet-submit" type="submit">
         <label for="tweet-text">What are you humming about?</label>
-        <textarea name="text" id="tweet-text"></textarea>
+        <textarea name="text" id="tweet-text" contenteditable></textarea>
         
         <div class="tweet-actions">         
           <button type="submit">Tweet</button>
@@ -82,6 +82,10 @@
 
     <section class="tweets-container">
       <!-- Tweets will propagate here -->
+    </section>
+
+    <section class="scroll-up">
+      <button><i class="fa-solid fa-arrow-up"></i></button>
     </section>
     
   </main>
