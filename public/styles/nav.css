@@ -55,12 +55,10 @@ nav .new-tweet {
   100% {
     transform: translateY(0);
   }
-
   40% {
-    transform: translateY(-30px);
+    transform: translateY(-16px);
   }
-
   60% {
-    transform: translateY(-15px);
+    transform: translateY(-8px);
   }
 }

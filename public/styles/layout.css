@@ -34,13 +34,14 @@ body {
  @media only screen and (min-width: 1024px) {
   body {
     display: flex;
-    flex-direction: row;
+    height: 100vh;
   }
 
   main {
-    float: left;
     padding-top: 14%;
     padding-left: 3%;
     padding-right: 3%;
+    overflow: auto;
   }
+
  }

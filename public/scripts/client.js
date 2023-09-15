@@ -5,9 +5,11 @@
  */
 
 $(document).ready(function () {
-  //Bounce return buttong
-  $(window).on("scroll", () => {
-    $(".scroll-up button").css("visibility", "visible");
+  //Bounce return button
+  $(window).on("scroll", function () {
+    if($(window).scrollTop() + $(window).height() > $(document).height() - 100) {
+      $(".scroll-up button").css("visibility", "visible");
+    }
   });
 
   //XSS Escape for template literal tweet structure
