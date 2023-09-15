@@ -7,8 +7,10 @@
 $(document).ready(function () {
   //Bounce return button
   $(window).on("scroll", function () {
-    if($(window).scrollTop() + $(window).height() > $(document).height() - 100) {
-      $(".scroll-up button").css("visibility", "visible");
+    if($(window).scrollTop() + $(window).height() > $(document).height() - 300) {
+      $(".scroll-up button").css("visibility", "visible").fadeIn("fast");
+    } else {
+      $(".scroll-up button").fadeOut("slow");
     }
   });
 
