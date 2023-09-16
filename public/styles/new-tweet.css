@@ -1,12 +1,16 @@
-section.new-tweet {
+/* .new-tweet {
   width: auto;
   padding: 2% 0;
-  margin-top: 3%;;
+  margin-top: 3%;; */
 }
 
 h2 {
   text-align: left;
 }
+/* 
+#tweet-submit {
+  display: none;
+} */
 
 .new-tweet textarea {
   background-color: transparent;

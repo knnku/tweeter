@@ -19,13 +19,6 @@ nav div {
   align-items: center;
 }
 
-nav .new-tweet {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-
 /* Styles for back to top (since it's considered nav?) */
 
 .scroll-up button {
@@ -65,13 +58,19 @@ nav .new-tweet {
   }
 }
 
-/* Styles for tweet text area collaps */
+/* Styles for tweet text area collapse */
 
-.new-tweet i {
+.nav-new-tweet {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nav-new-tweet i {
   color: red;
 }
 
-.new-tweet i:hover {
+.nav-new-tweet:hover {
   animation: bounce2 2s ease infinite;
 }
 
@@ -86,10 +85,10 @@ nav .new-tweet {
   }
 
   40% {
-    transform: translateY(16px);
+    transform: translateY(8px);
   }
 
   60% {
-    transform: translateY(8px);
+    transform: translateY(16px);
   }
 }
