@@ -14,6 +14,8 @@ $(document).ready(function () {
     }
   });
 
+  
+
   //XSS Escape for template literal tweet structure
   const escape = function (str) {
     let div = document.createElement("div");
