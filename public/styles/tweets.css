@@ -1,4 +1,3 @@
-
 article.tweet {
   border: 3px solid #545149;
   padding: 2%;
@@ -76,6 +75,12 @@ article.tweet footer {
   display: none;
 }
 
-.tweet-error i{
+.tweet-error i {
   margin: 0 18px;
+}
+
+/* Tweet submit collaps */
+
+#tweet-submit {
+  display: none;
 }

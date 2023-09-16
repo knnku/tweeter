@@ -8,13 +8,18 @@ $(document).ready(function () {
   //Bounce return button
   $(window).on("scroll", function () {
     if($(window).scrollTop() + $(window).height() > $(document).height() - 300) {
-      $(".scroll-up button").css("visibility", "visible").fadeIn("fast");
+      $(".scroll-up button").fadeIn("fast");
     } else {
       $(".scroll-up button").fadeOut("slow");
     }
   });
 
-  
+
+  // Tweet form collapse Toggle
+  $(".nav-new-tweet").on("click", () => {
+    $("#tweet-submit").slideToggle("fast");
+    $("#tweet-text").focus();
+  });
 
   //XSS Escape for template literal tweet structure
   const escape = function (str) {
