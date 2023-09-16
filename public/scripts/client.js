@@ -6,14 +6,16 @@
 
 $(document).ready(function () {
   //Bounce return button
-  $(window).on("scroll", function () {
-    if($(window).scrollTop() + $(window).height() > $(document).height() - 300) {
+  $(window).on("scroll", () => {
+    if (
+      $(window).scrollTop() + $(window).height() >
+      $(document).height() - 300
+    ) {
       $(".scroll-up button").fadeIn("fast");
     } else {
       $(".scroll-up button").fadeOut("slow");
     }
   });
-
 
   // Tweet form collapse Toggle
   $(".nav-new-tweet").on("click", () => {
