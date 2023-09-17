@@ -1,3 +1,5 @@
+@import "_variables";
+
 h2 {
   text-align: left;
 }
@@ -30,11 +32,10 @@ h2 {
 }
 
 .new-tweet button {
-  background-color: #4056A1;
-  color: white;
+  background-color: $base-color;
+  color: $dfalt-font-color;
   border: none;
-  padding: 8px 16px;
-  border-radius: 0.2em;
+  padding: 5px 8px;
 }
 
 .new-tweet button:hover {

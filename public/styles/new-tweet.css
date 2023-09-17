@@ -31,10 +31,9 @@ h2 {
 
 .new-tweet button {
   background-color: #4056A1;
-  color: white;
+  color: #FFFFFF;
   border: none;
-  padding: 8px 16px;
-  border-radius: 0.2em;
+  padding: 5px 8px;
 }
 
 .new-tweet button:hover {

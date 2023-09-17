@@ -5,7 +5,7 @@
  */
 
 $(document).ready(function () {
-  //Return to top button when window scrolling
+  //Show return to top button when window scrolling
   $(window).on("scroll", () => {
     if ($(window).scrollTop() + 600 > $(window).height()) {
       $(".scroll-up button").fadeIn("fast");
@@ -14,7 +14,7 @@ $(document).ready(function () {
     }
   });
 
-  //Return to top button when in element scrolling
+  //Show return to top button when in element scrolling
   $("main").on("scroll", () => {
     if ($("main").scrollTop() + 600 > $(window).height()) {
       $(".scroll-up button").fadeIn("fast");
@@ -23,6 +23,7 @@ $(document).ready(function () {
     }
   });
 
+  //Scroll to top button
   $(".scroll-up").on("click", () => {
     $(window).scrollTop({ top: 0, behavior: "smooth" });
     $("main").scrollTop({ top: 0, behavior: "smooth" });
@@ -91,6 +92,9 @@ $(document).ready(function () {
   //Error templates for too much threats
   const $longTweetErr = `<label><i class="fa-solid fa-triangle-exclamation"></i>This tweet is too long!<i class="fa-solid fa-triangle-exclamation"></i></label>`;
 
+  //Error templates for something wierd
+  const $wierdErr = `<label><i class="fa-solid fa-triangle-exclamation"></i>Uh oh, something went wrong.<i class="fa-solid fa-triangle-exclamation"></i></label>`;
+
   //Capture & POST tweet data on form(button) submmit
   const $tweetForm = $("#tweet-submit");
   $($tweetForm).on("submit", function (event) {
@@ -102,30 +106,29 @@ $(document).ready(function () {
     //Check form if empty
     const $checkTweet = $("#tweet-text").val();
     if ($checkTweet === "") {
-      $(".tweet-error").html($emptyTweetErr);
-      $(".tweet-error").slideDown("easing", function () {
-        $(this).css("display", "block");
-      });
+      $(".tweet-error").html($emptyTweetErr).slideDown("easing");
       return;
     }
     //Check if tweet is long
     if ($checkTweet.length > 140) {
-      $(".tweet-error").html($longTweetErr);
-      $(".tweet-error").slideDown("easing", function () {
-        $(this).css("display", "block");
-      });
+      $(".tweet-error").html($longTweetErr).slideDown("easing");
       return;
     }
 
     const $data = $(this).serialize();
 
-    $.post("/tweets", $data, function () {
-      // Reset input field and counter
-      $("#tweet-text").val("");
-      $(".counter").val("140").css("color", "");
+    $.post("/tweets", $data)
+      .done(function () {
+        // Reset input field and counter
+        $("#tweet-text").val("");
+        $(".counter").val("140").css("color", "");
 
-      $loadLastTweet();
-    });
+        // Load last tweet
+        $loadLastTweet();
+      })
+      .fail(function (xhr, status, error) {
+        $(".tweet-error").html($wierdErr).slideDown("easing");
+      });
   });
 
   //Loop through tweets JSON in tweets data route

@@ -62,7 +62,7 @@ nav div {
 }
 
 .nav-new-tweet:hover i {
-  animation: bounce-down 3s linear infinite;
+  animation: bounce-down 2s linear infinite;
 }
 
 @keyframes bounce-down {

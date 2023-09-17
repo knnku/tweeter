@@ -1,3 +1,5 @@
+@import "_variables";
+
 /* Main tweet styles */
 .tweet {
   border: 3px solid #545149;
@@ -54,7 +56,7 @@
 /* tweet action icons */
 .tweet-icons {
   font-size: 0.8em;
-  color: #4056A1;
+  color: $base-color;
 }
 
 .tweet-icons i {

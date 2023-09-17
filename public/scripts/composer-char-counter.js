@@ -1,8 +1,7 @@
 $(document).ready(function () {
   // --- our code goes here ---
 
-  console.log("Dom is loaded: ready!");
-
+  //Tweet character counter
   $("#tweet-text").on("input", function () {
     let tweetCount = $(this).val().length;
     let target = $(this).parent().find(".counter");
@@ -11,7 +10,7 @@ $(document).ready(function () {
     target.val(remainingCharacters);
 
     //Red
-    if (remainingCharacters <= 0) {
+    if (remainingCharacters < 0) {
       target.css("color", "red");
     } else {
       target.css("color", "");

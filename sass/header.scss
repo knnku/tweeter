@@ -1,3 +1,5 @@
+ @import "_variables";
+ 
  .site-header {
    margin-top: 120px;
    height: 400px;
@@ -6,7 +8,7 @@
    flex-direction: column;
    justify-content: center;
    align-items: center;
-   background-color: darkkhaki;
+   background-color: $bg-color;
    background-image: url("../images/arches.png");
  }
 
@@ -20,6 +22,6 @@
    .site-header {
      justify-content: center;
      margin-top: 0;
-     height: 100vh;
+     height: 100vh; //I think this looks good on big screens pls let me keep it
    }
  }
