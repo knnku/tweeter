@@ -3,7 +3,7 @@
 
 # Tweeter Project
 
-This single page application (SPA) project is a simple, Twitter clone which allows "users" to post tweets up to 140 characters. Emphasizing the front-end build using jQuery, AJAX and some vanilla JS to implement asynchronous requests to post, get tweets, responsive design features and perform animations at a smaller scale.
+This single page application (SPA) project is a simple, Twitter clone which allows "users" to post tweets up to 140 characters. Emphasizing on the front-end build using jQuery, AJAX and some vanilla JS to implement asynchronous requests to post, get tweets, responsive design features and perform animations at a smaller scale.
 
 ## Build and run
 
@@ -13,11 +13,10 @@ This single page application (SPA) project is a simple, Twitter clone which allo
 4. Direct browser to <http://localhost:8080/>.
 5. Post a tweet.
 
-## Preview
+## Previews
 
-!["Home Page"](https://raw.githubusercontent.com/knnku/tweeter/master/assets/tweeter1.png)
-
-
+!["Big Screen Home Page"](https://raw.githubusercontent.com/knnku/tweeter/master/assets/tweeter1.png)
+!["Tablet Screen Home Page"](https://raw.githubusercontent.com/knnku/tweeter/master/assets/tweeter3.png)
 
 ## Dependencies
 
@@ -30,3 +29,7 @@ This single page application (SPA) project is a simple, Twitter clone which allo
 ---
 
 [This repository was ~~forked~~ created as a template from the main LHL project repo.](https://github.com/lighthouse-labs/tweeter)
+
+
+
+*Built by @knnku as a part of the LHL program curriculum.*
