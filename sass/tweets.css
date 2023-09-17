@@ -1,0 +1,85 @@
+/* Main tweet styles */
+.tweet {
+  border: 3px solid #545149;
+  padding: 2%;
+  margin: 6% 0;
+  text-align: left;
+}
+.tweet:hover {
+  box-shadow: 6px 6px #989691;
+}
+
+.tweet header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tweet p {
+  margin: 20px 0;
+  padding: 18px 0;
+  border-bottom: 3px solid #545149;
+  font-size: 1.1em;
+  overflow-wrap: break-word;
+}
+
+.tweet footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tweet-user {
+  display: flex;
+  align-items: center;
+}
+
+.tweet-user div {
+  padding: 0 5px;
+}
+
+.tweet-usertag {
+  font-weight: bold;
+  font-size: 0.7em;
+  color: #989691;
+}
+
+.tweet-timestamp {
+  font-weight: bold;
+  font-size: 0.6em;
+  color: #989691;
+}
+
+
+/* tweet action icons */
+.tweet-icons {
+  font-size: 0.8em;
+  color: #4056A1;
+}
+
+.tweet-icons i {
+  padding: 0 3px;
+}
+
+.tweet-icons i:hover {
+  color: #C49A3B;
+}
+
+.likes {
+  font-size: 0.5em;
+  vertical-align: top;
+}
+
+/* Tweet Error */
+.tweet-error {
+  border: 2px solid red;
+  padding: 2% 0;
+  margin-bottom: 3%;
+  color: red;
+  text-align: center;
+  display: none;
+}
+
+.tweet-error i {
+  margin: 0 18px;
+}
