@@ -1,35 +1,34 @@
-article.tweet {
+/* Main tweet styles */
+.tweet {
   border: 3px solid #545149;
   padding: 2%;
   margin: 6% 0;
   text-align: left;
 }
-
-article.tweet:hover {
+.tweet:hover {
   box-shadow: 6px 6px #989691;
 }
 
-article.tweet header {
+.tweet header {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-article.tweet p {
-  margin: 22px 0;
+.tweet p {
+  margin: 20px 0;
   padding: 18px 0;
   border-bottom: 3px solid #545149;
   font-size: 1.1em;
   overflow-wrap: break-word;
 }
 
-article.tweet footer {
+.tweet footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-/* Tweet elements */
 .tweet-user {
   display: flex;
   align-items: center;
@@ -55,14 +54,20 @@ article.tweet footer {
 /* tweet action icons */
 .tweet-icons {
   font-size: 0.8em;
+  color: #4056A1;
 }
 
 .tweet-icons i {
-  padding: 0 5px;
+  padding: 0 3px;
 }
 
 .tweet-icons i:hover {
-  color: #4056A1;
+  color: #C49A3B;
+}
+
+.likes {
+  font-size: 0.5em;
+  vertical-align: top;
 }
 
 /* Tweet Error */

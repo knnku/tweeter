@@ -7,7 +7,6 @@
 $(document).ready(function () {
   //Return to top button when window scrolling
   $(window).on("scroll", () => {
-    console.log($(window).scrollTop(), $(window).height());
     if ($(window).scrollTop() + 600 > $(window).height()) {
       $(".scroll-up button").fadeIn("fast");
     } else {
@@ -17,7 +16,6 @@ $(document).ready(function () {
 
   //Return to top button when in element scrolling
   $("main").on("scroll", () => {
-    console.log($("main").scrollTop(), $(window).height());
     if ($("main").scrollTop() + 600 > $(window).height()) {
       $(".scroll-up button").fadeIn("fast");
     } else {
@@ -48,12 +46,13 @@ $(document).ready(function () {
     const { name, avatars, handle } = tweet.user;
     const tweetText = tweet.content.text;
     const timestamp = tweet.created_at;
+    const likes = Math.floor(Math.random() * 100);
     const $tweetOutput = `
       <article class="tweet">
         <header>
 
           <div class="tweet-user">
-            <div class="tweet-useravatar">
+            <div>
               <img src="${avatars}">
             </div>
             <div class="username">
@@ -77,7 +76,7 @@ $(document).ready(function () {
           <div class="tweet-icons">
             <i class="fa-solid fa-flag"></i>
             <i class="fa-solid fa-repeat"></i>
-            <i class="fa-solid fa-heart"></i>
+            <i class="fa-solid fa-heart"><label class="likes">${likes}</label></i>
           </div>
         </footer>
       </article>`;
@@ -121,7 +120,7 @@ $(document).ready(function () {
     const $data = $(this).serialize();
 
     $.post("/tweets", $data, function () {
-      // Clear the tweet input field and reset counter
+      // Reset input field and counter
       $("#tweet-text").val("");
       $(".counter").val("140").css("color", "");
 
