@@ -78,9 +78,3 @@ article.tweet footer {
 .tweet-error i {
   margin: 0 18px;
 }
-
-/* Tweet submit collaps */
-
-#tweet-submit {
-  display: none;
-}

@@ -5,21 +5,34 @@
  */
 
 $(document).ready(function () {
-  //Bounce return button
+  //Return to top button when window scrolling
   $(window).on("scroll", () => {
-    if (
-      $(window).scrollTop() + $(window).height() >
-      $(document).height() - 300
-    ) {
+    console.log($(window).scrollTop(), $(window).height());
+    if ($(window).scrollTop() + 600 > $(window).height()) {
       $(".scroll-up button").fadeIn("fast");
     } else {
       $(".scroll-up button").fadeOut("slow");
     }
   });
 
+  //Return to top button when in element scrolling
+  $("main").on("scroll", () => {
+    console.log($("main").scrollTop(), $(window).height());
+    if ($("main").scrollTop() + 600 > $(window).height()) {
+      $(".scroll-up button").fadeIn("fast");
+    } else {
+      $(".scroll-up button").fadeOut("slow");
+    }
+  });
+
+  $(".scroll-up").on("click", () => {
+    $(window).scrollTop({ top: 0, behavior: "smooth" });
+    $("main").scrollTop({ top: 0, behavior: "smooth" });
+  });
+
   // Tweet form collapse Toggle
   $(".nav-new-tweet").on("click", () => {
-    $("#tweet-submit").slideToggle("fast");
+    $(".new-tweet").slideToggle("fast");
     $("#tweet-text").focus();
   });
 
@@ -108,11 +121,10 @@ $(document).ready(function () {
     const $data = $(this).serialize();
 
     $.post("/tweets", $data, function () {
-      // Clear the tweet input field
+      // Clear the tweet input field and reset counter
       $("#tweet-text").val("");
+      $(".counter").val("140").css("color", "");
 
-      // Clear the existing tweets container and reload tweets
-      // $(".tweets-container").empty();
       $loadLastTweet();
     });
   });
