@@ -12,7 +12,7 @@ nav {
 }
 
 nav span {
-  font-family: 'Bungee', sans-serif;
+  font-family: $hero-font;
 }
 
 nav div {
@@ -21,8 +21,7 @@ nav div {
   align-items: center;
 }
 
-/* Styles for back to top (since it's considered nav?) */
-
+/* Styles for back to top (since it's considered a nav?) */
 .scroll-up button {
   right: 2%;
   bottom: 4%;
@@ -61,7 +60,6 @@ nav div {
 }
 
 /* Styles for tweet text area collapse */
-
 .nav-new-tweet {
   display: flex;
   flex-direction: column;

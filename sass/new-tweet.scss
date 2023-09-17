@@ -28,7 +28,7 @@ h2 {
 .tweet-actions {
   display: flex;
   justify-content: space-between;
-  font-family: 'Bungee', sans-serif;
+  font-family: $hero-font
 }
 
 .new-tweet button {
