@@ -5,6 +5,7 @@
   margin: 6% 0;
   text-align: left;
 }
+
 .tweet:hover {
   box-shadow: 6px 6px #989691;
 }
@@ -49,7 +50,6 @@
   font-size: 0.6em;
   color: #989691;
 }
-
 
 /* tweet action icons */
 .tweet-icons {

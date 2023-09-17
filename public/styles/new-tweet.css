@@ -26,7 +26,7 @@ h2 {
 .tweet-actions {
   display: flex;
   justify-content: space-between;
-  font-family: 'Bungee', sans-serif;
+  font-family: "Bungee", sans-serif;
 }
 
 .new-tweet button {
@@ -41,7 +41,7 @@ h2 {
   background-color: #4056B8;
 }
 
-.new-tweet label{
+.new-tweet label {
   font-weight: bold;
   font-size: 0.9em;
 }

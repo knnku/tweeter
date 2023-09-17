@@ -10,7 +10,7 @@ nav {
 }
 
 nav span {
-  font-family: 'Bungee', sans-serif;
+  font-family: "Bungee", sans-serif;
 }
 
 nav div {
@@ -20,7 +20,6 @@ nav div {
 }
 
 /* Styles for back to top (since it's considered nav?) */
-
 .scroll-up button {
   right: 2%;
   bottom: 4%;
@@ -29,10 +28,9 @@ nav div {
   position: fixed;
   border-radius: 50%;
   color: #FFFFFF;
-  background-color:#4056A1;
+  background-color: #4056A1;
   border: none;
   text-align: center;
-
   display: none;
 }
 
@@ -41,25 +39,17 @@ nav div {
 }
 
 @keyframes bounce-up {
-  0%,
-  20%,
-  50%,
-  80%,
-  100% {
+  0%, 20%, 50%, 80%, 100% {
     transform: translateY(0);
   }
-
   40% {
     transform: translateY(-16px);
   }
-
   60% {
     transform: translateY(-8px);
   }
 }
-
 /* Styles for tweet text area collapse */
-
 .nav-new-tweet {
   display: flex;
   flex-direction: column;
@@ -76,15 +66,9 @@ nav div {
 }
 
 @keyframes bounce-down {
-
-  0%,
-  20%,
-  50%,
-  80%,
-  100% {
+  0%, 20%, 50%, 80%, 100% {
     transform: translateY(0);
   }
-
   40% {
     transform: translateY(10px);
   }
