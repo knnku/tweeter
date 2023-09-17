@@ -1,6 +1,6 @@
 # Tweeter Project
 
-This project is a simple, single-page Twitter clone which allows "users" to post tweets up to 140 characters. Focused heavily on building the front-end using jQuery, AJAX and some vanilla JS to execute asynchronous requests to post, get tweets, responsive design and simple small animation features.
+This project is a simple, single-page Twitter clone which allows "users" to post tweets up to 140 characters. Focused heavily on building the front-end using jQuery, AJAX and some vanilla JS to execute asynchronous requests to post, get tweets, responsive design styles and simple small animation features.
 
 ## Build and run
 
@@ -12,7 +12,7 @@ This project is a simple, single-page Twitter clone which allows "users" to post
 
 ## Preview
 
-!["Home Page"]()
+!["Home Page"](https://raw.githubusercontent.com/knnku/tweeter/master/assets/tweeter1.png)
 
 ## Dependencies
 
@@ -24,7 +24,7 @@ This project is a simple, single-page Twitter clone which allows "users" to post
 
 
 
-
+---
 
 
 [This repository was ~~forked~~ created from the main LHL project repo template.](https://github.com/lighthouse-labs/tweeter)
